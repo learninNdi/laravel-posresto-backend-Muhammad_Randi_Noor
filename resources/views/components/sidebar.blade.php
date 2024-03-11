@@ -17,12 +17,22 @@
                             href="{{ url('dashboard-general-dashboard') }}">General Dashboard</a>
                     </li>
                 </ul>
+
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link"
                             href="{{ route('users.index') }}">Users</a>
                     </li>
+                    <li>
+                        <a class="nav-link"
+                            href="{{ route('categories.index') }}">Categories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"
+                            href="{{ route('products.index') }}">Products</a>
+                    </li>
                 </ul>
+
             </li>
         </ul>
     </aside>

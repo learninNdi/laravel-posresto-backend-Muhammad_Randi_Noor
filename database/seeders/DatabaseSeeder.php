@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'role' => 'admin',
         ]);
+
+        $this->call([CategorySeeder::class,]);
+        $this->call([ProductSeeder::class,]);
     }
 }
