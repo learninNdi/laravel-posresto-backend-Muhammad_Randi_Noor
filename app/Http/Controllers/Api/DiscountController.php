@@ -23,19 +23,24 @@ class DiscountController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDiscountRequest $request)
+    public function store(Request $request)
     {
-        //
+        // validate the request
+        $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+            'value' => 'required',
+        ]);
+
+        // create discount
+        $discount = \App\Models\Discount::create($request->all());
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $discount,
+        ], 201);
     }
 
     /**
