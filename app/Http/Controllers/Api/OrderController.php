@@ -15,6 +15,7 @@ class OrderController extends Controller
         // validate request
         $request->validate([
             'payment_amount' => 'required',
+            'price' => 'required',
             'sub_total' => 'required',
             'tax' => 'required',
             'discount' => 'required',
@@ -29,6 +30,7 @@ class OrderController extends Controller
 
         $order = Order::create([
             'payment_amount' => $request->payment_amount,
+            'price' => $request->price,
             'sub_total' => $request->sub_total,
             'tax' => $request->tax,
             'discount' => $request->discount,
